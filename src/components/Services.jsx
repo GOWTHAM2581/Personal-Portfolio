@@ -26,7 +26,7 @@ export default function Services() {
   return (
     <section
       id="service"
-      className="bg-[#0F172A] text-gray-200 py-20 px-6 md:px-20"
+      className="bg-[#0F172A] text-gray-200 py-16 px-4 sm:px-6 md:px-20"
     >
       {/* Section Title */}
       <div className="text-center mb-12">
@@ -40,27 +40,27 @@ export default function Services() {
       </div>
 
       {/* Service Cards */}
-      <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 place-items-center">
+      <div className="grid gap-6 sm:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 place-items-center">
         {services.map((service, index) => (
           <div
             key={index}
-            className="relative bg-[#1E293B]/80 rounded-2xl overflow-hidden shadow-[0_0_25px_rgba(249,115,22,0.15)] hover:shadow-[0_0_40px_rgba(249,115,22,0.35)] transition-all duration-500 group w-[320px] md:w-[340px]"
+            className="relative bg-[#1E293B]/80 rounded-2xl overflow-hidden shadow-[0_0_25px_rgba(249,115,22,0.15)] hover:shadow-[0_0_40px_rgba(249,115,22,0.35)] transition-all duration-500 group w-full sm:w-[320px] md:w-[340px] max-w-sm"
           >
             {/* Image Section */}
             <div className="overflow-hidden">
               <img
                 src={service.image}
                 alt={service.title}
-                className="w-full h-56 object-cover object-center rounded-t-2xl group-hover:scale-110 transition-transform duration-700"
+                className="w-full h-48 sm:h-56 object-cover object-center rounded-t-2xl group-hover:scale-105 transition-transform duration-700"
               />
             </div>
 
             {/* Text Content */}
-            <div className="p-5">
-              <h3 className="text-xl font-semibold text-white mb-2">
+            <div className="p-4 sm:p-5 text-center sm:text-left">
+              <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">
                 {service.title}
               </h3>
-              <p className="text-gray-400 text-sm mb-4 leading-relaxed">
+              <p className="text-gray-400 text-xs sm:text-sm mb-4 leading-relaxed">
                 {service.description}
               </p>
             </div>

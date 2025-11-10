@@ -109,10 +109,10 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="bg-[#0F172A] text-gray-200 py-16 px-6 md:px-20 transition-all duration-300"
+      className="bg-[#0F172A] text-gray-200 py-14 px-4 sm:px-6 md:px-20 transition-all duration-300"
     >
       <div className="text-center mb-10">
-        <h2 className="text-3xl md:text-4xl font-bold">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center">
           My <span className="text-[#F97316]">Skills</span>
         </h2>
         <p className="text-gray-400 mt-3 max-w-2xl mx-auto text-sm md:text-base">
@@ -131,7 +131,7 @@ export default function Skills() {
           return (
             <div
               key={index}
-              className={`w-full max-w-5xl border border-[#1E293B]/80 bg-[#1E293B]/50 rounded-xl p-4 transition-all duration-300 ${
+              className={`w-full max-w-5xl border border-[#1E293B]/80 bg-[#1E293B]/50 rounded-xl p-3 sm:p-4 hover:bg-[#1E293B]/80 transition-all duration-300 ${
                 isOpen ? "shadow-[0_0_20px_rgba(249,115,22,0.3)]" : ""
               }`}
               onMouseEnter={() => setHoveredCategory(category.title)}
@@ -139,7 +139,7 @@ export default function Skills() {
               onClick={() => handleClick(category.title)}
             >
               {/* Header */}
-              <div className="flex justify-between items-center cursor-pointer">
+              <div className="flex justify-between items-center cursor-pointer px-2 sm:px-0">
                 <h3 className="text-lg font-semibold text-[#F97316]">
                   {category.title}
                 </h3>
@@ -156,19 +156,19 @@ export default function Skills() {
 
               {/* Skills */}
               <div
-                className={`grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-4 mt-4 overflow-hidden transition-all duration-500 ${
+                className={`grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-3 sm:gap-4 mt-4 overflow-hidden transition-all duration-500  ${
                   isOpen ? "max-h-[400px] opacity-100" : "max-h-0 opacity-0"
                 }`}
               >
                 {category.skills.map((skill, i) => (
                   <div
                     key={i}
-                    className="flex flex-col items-center justify-center bg-[#0F172A] rounded-lg p-3 w-20 h-20 hover:scale-105 hover:shadow-[0_0_15px_rgba(249,115,22,0.4)] transition-all duration-300"
+                    className="flex flex-col items-center justify-center bg-[#0F172A] rounded-lg p-2 sm:p-3 w-16 h-16 sm:w-20 sm:h-20 hover:scale-105 hover:shadow-[0_0_12px_rgba(249,115,22,0.4)] transition-all duration-300"
                   >
-                    <div className="text-xl text-[#F97316] mb-1">
+                    <div className="text-lg sm:text-xl text-[#F97316] mb-1">
                       {skill.icon}
                     </div>
-                    <p className="text-[0.7rem] text-gray-300 text-center">
+                    <p className="text-[0.65rem] sm:text-[0.75rem] text-gray-300 text-center">
                       {skill.name}
                     </p>
                   </div>

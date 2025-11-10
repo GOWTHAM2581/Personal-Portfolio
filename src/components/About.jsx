@@ -1,7 +1,9 @@
-import React from "react";
-import aboutImg from "/aboutme.png"; 
+import React, { useState } from "react";
+import aboutImg from "/aboutme.png";
 
 export default function About() {
+  const [showMore, setShowMore] = useState(false);
+
   return (
     <section
       id="about"
@@ -30,33 +32,50 @@ export default function About() {
             <span className="text-[#F97316] font-semibold">
               Computer Science and Engineering Graduate
             </span>{" "}
-            from <span className="font-semibold">SNS College of Technology</span>, Coimbatore, with a CGPA of{" "}
-            <span className="text-[#F97316] font-semibold">8.7</span>. During my academic journey, I gained strong
-            fundamentals in{" "}
+            from <span className="font-semibold">SNS College of Technology</span>, Coimbatore, 
+            with a CGPA of{" "}
+            <span className="text-[#F97316] font-semibold">8.7</span>. During my academic journey, 
+            I gained strong fundamentals in{" "}
             <span className="font-medium">
               Data Structures, Algorithms, Database Management, Web Technologies,
             </span>{" "}
-            and <span className="font-medium">Software Development Life Cycle</span>. My learning approach has always been
-            hands-on — focusing on building real-world projects to bridge theory and practice.
+            and <span className="font-medium">Software Development Life Cycle</span>. 
+            My learning approach has always been hands-on — focusing on building 
+            real-world projects to bridge theory and practice.
           </p>
 
-          <p className="text-gray-400 leading-relaxed mb-4">
-            Throughout my studies, I worked on multiple academic and personal projects that deepened my understanding of{" "}
-            <span className="font-medium">full-stack web development, cloud computing,</span> and{" "}
-            <span className="font-medium">UI/UX design</span>. I love transforming complex ideas into intuitive, scalable,
-            and visually engaging digital experiences.
-          </p>
+          {showMore && (
+            <>
+              <p className="text-gray-400 leading-relaxed mb-4">
+                Throughout my studies, I worked on multiple academic and personal projects 
+                that deepened my understanding of{" "}
+                <span className="font-medium">full-stack web development, cloud computing,</span> 
+                and{" "}
+                <span className="font-medium">UI/UX design</span>. I love transforming complex 
+                ideas into intuitive, scalable, and visually engaging digital experiences.
+              </p>
 
-          <p className="text-gray-400 leading-relaxed mb-8">
-            I’m deeply passionate about{" "}
-            <span className="text-[#F97316] font-semibold">
-              creating digital experiences that combine logic and design.
-            </span>{" "}
-            What drives me is solving real-world problems through clean code, efficient systems, and thoughtful design. I
-            believe the best products are built where{" "}
-            <span className="font-medium">creativity, structure, and user empathy</span> meet.
-          </p>
+              <p className="text-gray-400 leading-relaxed mb-8">
+                I’m deeply passionate about{" "}
+                <span className="text-[#F97316] font-semibold">
+                  creating digital experiences that combine logic and design.
+                </span>{" "}
+                What drives me is solving real-world problems through clean code, efficient 
+                systems, and thoughtful design. I believe the best products are built where{" "}
+                <span className="font-medium">creativity, structure, and user empathy</span> meet.
+              </p>
+            </>
+          )}
 
+          {/* Read More / Less Button */}
+          <button
+            onClick={() => setShowMore(!showMore)}
+            className="text-[#F97316] font-semibold mb-6 hover:underline focus:outline-none"
+          >
+            {showMore ? "Read Less ▲" : "Read More ▼"}
+          </button>
+
+          {/* Connect Button */}
           <a
             href="#contact"
             className="bg-[#F97316] text-white px-5 py-2.5 rounded-full font-semibold hover:scale-105 hover:shadow-[0_0_15px_rgba(249,115,22,0.6)] transition-all duration-300 mx-auto md:mx-0 w-fit"

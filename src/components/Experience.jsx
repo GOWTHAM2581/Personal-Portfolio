@@ -35,40 +35,45 @@ export default function Experience() {
   return (
     <section
       id="experience"
-      className="bg-[#0F172A] text-gray-200 py-16 px-4 sm:px-8 md:px-20 flex flex-col items-center justify-center"
+      className="bg-[#0F172A] text-gray-200 py-14 px-4 sm:px-6 md:px-20 flex flex-col items-center justify-center"
     >
       {/* Header */}
       <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">
           My <span className="text-[#F97316]">Work Experience</span>
         </h2>
-        <p className="text-gray-400 mt-3 max-w-2xl mx-auto text-sm md:text-base">
+        <p className="text-gray-400 mt-2 text-sm sm:text-base max-w-xl mx-auto px-2">
           A timeline of my professional journey showcasing growth across
           development and engineering roles.
         </p>
       </div>
 
       {/* Timeline */}
-      <div className="relative w-full max-w-5xl flex flex-col items-center">
+      <div className="relative w-full max-w-5xl mx-auto">
         {/* Center Line */}
-        <div className="absolute left-1/2 -translate-x-1/2 h-full border-l-2 border-dashed border-[#F97316]/60"></div>
+        <div className="absolute left-1/2 top-0 -translate-x-1/2 w-[2px] h-full border-l-2 border-dashed border-[#F97316]/50 pointer-events-none z-0"></div>
 
-        <div className="space-y-12 w-full">
+        {/* Experience Cards */}
+        <div className="space-y-10">
           {experiences.map((exp, index) => (
             <div
               key={index}
-              className="flex flex-col md:flex-row items-center justify-between gap-6 md:gap-10"
+              className={`relative flex flex-col md:flex-row md:justify-between items-center md:items-stretch text-center md:text-left bg-[#1E293B]/70 border border-[#1E293B]/60 rounded-xl p-6 transition-all duration-300 hover:shadow-[0_0_25px_rgba(249,115,22,0.25)] ${
+                index % 2 === 0 ? "md:flex-row-reverse" : ""
+              }`}
             >
-              {/* Left Side - Company & Date */}
-              <div className="md:w-[45%] text-right pr-6 md:pr-10">
-                <h3 className="text-lg font-semibold text-white">
+              {/* Company + Period */}
+              <div className="md:w-[45%] flex flex-col justify-center text-center md:text-right md:pr-8">
+                <h3 className="text-lg sm:text-xl font-semibold text-[#F97316]">
                   {exp.company}
                 </h3>
-                <p className="text-gray-400 text-sm">{exp.period}</p>
+                <p className="text-xs sm:text-sm text-gray-400 mt-1">
+                  {exp.period}
+                </p>
               </div>
 
-              {/* Middle Dot */}
-              <div className="flex items-center justify-center">
+              {/* Dot */}
+              <div className="relative flex items-center justify-center my-4 md:my-0">
                 <div
                   className={`w-5 h-5 rounded-full border-4 ${
                     index % 2 === 0
@@ -76,14 +81,17 @@ export default function Experience() {
                       : "border-[#0F172A] bg-[#F97316]"
                   }`}
                 ></div>
+                <div className="hidden md:block absolute left-1/2 -translate-x-1/2 h-[150%] border-l-2 border-dashed border-[#F97316]/40"></div>
               </div>
 
-              {/* Right Side - Role & Description */}
-              <div className="md:w-[45%] text-left pl-6 md:pl-10">
-                <h3 className="text-lg font-semibold text-[#F97316]">
+              {/* Role + Description */}
+              <div className="md:w-[45%] flex flex-col justify-center text-center md:text-left md:pl-8">
+                <h3 className="text-gray-300 text-sm sm:text-base font-medium">
                   {exp.role}
                 </h3>
-                <p className="text-gray-400 text-sm mt-1">{exp.description}</p>
+                <p className="text-gray-400 mt-2 text-xs sm:text-sm leading-relaxed">
+                  {exp.description}
+                </p>
               </div>
             </div>
           ))}
