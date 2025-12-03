@@ -8,7 +8,7 @@ export default function Navbar() {
   const menuItems = [
     { name: "Home", href: "#home" },
     { name: "About", href: "#about" },
-    { name: "Service", href: "#service" },
+    // { name: "Service", href: "#service" },
     { name: "Skills", href: "#skills" },
     { name: "Experience", href: "#experience" },
     { name: "Contact", href: "#contact" },
@@ -18,12 +18,14 @@ export default function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
-      const offsets = menuItems.map((item) => {
-        const section = document.querySelector(item.href);
-        return section
-          ? { name: item.name, offset: section.offsetTop - 100 }
-          : null;
-      }).filter(Boolean);
+      const offsets = menuItems
+        .map((item) => {
+          const section = document.querySelector(item.href);
+          return section
+            ? { name: item.name, offset: section.offsetTop - 100 }
+            : null;
+        })
+        .filter(Boolean);
 
       const current = offsets
         .reverse()
@@ -65,7 +67,7 @@ export default function Navbar() {
         {/* Download CV */}
         <li>
           <a
-            href="/Gowtham Resume._..pdf"
+            href="/Gowtham Vasanthakumar Resume.pdf"
             download
             className="flex items-center gap-1 bg-[#F97316] text-white px-3 py-1.5 rounded-full text-sm hover:opacity-90 transition-all duration-300"
           >

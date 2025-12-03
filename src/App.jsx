@@ -30,15 +30,15 @@ export default function App() {
           : "bg-white text-gray-800"
       }`}
     >
-      <DisableInspect/>
+      <DisableInspect />
       <Navbar theme={theme} setTheme={setTheme} />
       <Hero />
-      <About/>
-      <Services/>
+      <About />
+      {/* <Services /> */}
       <Skills />
       <Experience />
-      <Contact/>
-      <Footer/>
+      <Contact />
+      <Footer />
       {/* Add other sections like Service, Contact, etc. */}
     </div>
   );

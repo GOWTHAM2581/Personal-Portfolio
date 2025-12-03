@@ -6,7 +6,8 @@ export default function Footer() {
   return (
     <footer className="bg-[#0F172A] text-gray-400 text-center py-6 mt-10 border-t border-[#1E293B]">
       <p className="text-sm">
-        © {year} <span className="text-[#F97316] font-semibold">Gowtham V</span>. All rights reserved.
+        © {year} Created by{" "}
+        <span className="text-[#F97316] font-semibold">Gowtham V</span>.
       </p>
     </footer>
   );

@@ -1,5 +1,5 @@
 import React from "react";
-import { FaDownload } from "react-icons/fa";
+import { FaDownload, FaLinkedin, FaGithub } from "react-icons/fa";
 import { TypeAnimation } from "react-type-animation";
 
 export default function Hero() {
@@ -38,20 +38,49 @@ export default function Hero() {
         </p>
 
         {/* Buttons */}
+        {/* Buttons + Social Icons */}
         <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 mt-6 w-full">
+          {/* Hire Me */}
           <a
             href="#contact"
             className="bg-[#F97316] text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 hover:scale-105 hover:shadow-[0_0_15px_rgba(249,115,22,0.7)]"
           >
             Hire Me
           </a>
-          <a
-            href="/Gowtham Resume._..pdf"
-            download
-            className="border border-[#F97316] text-[#F97316] px-6 py-3 rounded-full font-semibold transition-all duration-300 hover:bg-[#F97316] hover:text-white hover:shadow-[0_0_15px_rgba(249,115,22,0.7)]"
-          >
-            <FaDownload className="inline mr-2" /> Download CV
-          </a>
+
+          {/* CV + Icons Row */}
+          <div className="flex items-center gap-3">
+            {/* Download CV */}
+            <a
+              href="/Gowtham Vasanthakumar Resume.pdf"
+              download
+              className="border border-[#F97316] text-[#F97316] px-6 py-3 rounded-full font-semibold transition-all duration-300 hover:bg-[#F97316] hover:text-white hover:shadow-[0_0_15px_rgba(249,115,22,0.7)]"
+            >
+              <FaDownload className="inline mr-2" /> Download CV
+            </a>
+
+            {/* LinkedIn */}
+            <a
+              href="https://www.linkedin.com/in/gowtham-vasanthkumar/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#F97316] bg-[#F97316]/10 p-3 rounded-full text-xl 
+                 hover:bg-[#F97316] hover:text-white transition-all duration-300"
+            >
+              <FaLinkedin />
+            </a>
+
+            {/* GitHub */}
+            <a
+              href="https://github.com/GOWTHAM2581"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#F97316] bg-[#F97316]/10 p-3 rounded-full text-xl 
+                 hover:bg-[#F97316] hover:text-white transition-all duration-300"
+            >
+              <FaGithub />
+            </a>
+          </div>
         </div>
       </div>
 
